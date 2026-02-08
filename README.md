@@ -19,7 +19,12 @@ Instead of loading 2000+ lines every time, Claude loads only what's needed:
 Keeps guidelines synced across projects.
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/mocassinis/ai-guidelines/main/setup.sh | bash
+# First time: clone the setup script locally
+git clone git@github.com:mocassinis/ai-guidelines.git ~/.ai-guidelines
+
+# Run on any project
+~/.ai-guidelines/setup.sh /path/to/your-project
+cd /path/to/your-project
 git commit -m "Add AI guidelines submodule"
 ```
 
@@ -28,9 +33,7 @@ git commit -m "Add AI guidelines submodule"
 One-time copy, no sync.
 
 ```bash
-git clone git@github.com:mocassinis/ai-guidelines.git /tmp/ai-guidelines
-cp -r /tmp/ai-guidelines/.claude /path/to/your-project/
-rm -rf /tmp/ai-guidelines
+cp -r ~/.ai-guidelines/.claude /path/to/your-project/
 ```
 
 ## Structure
