@@ -28,12 +28,26 @@ cd /path/to/your-project
 git commit -m "Add AI guidelines submodule"
 ```
 
-### Option 2: Copy
+### Option 2: Manual Submodule
+
+Without using the setup script:
+
+```bash
+cd /path/to/your-project
+git submodule add git@github.com:mocassinis/ai-guidelines.git .claude-guidelines
+ln -s .claude-guidelines/.claude .claude
+git add .claude
+git commit -m "Add AI guidelines submodule"
+```
+
+### Option 3: Copy
 
 One-time copy, no sync.
 
 ```bash
-cp -r ~/.ai-guidelines/.claude /path/to/your-project/
+git clone git@github.com:mocassinis/ai-guidelines.git /tmp/ai-guidelines
+cp -r /tmp/ai-guidelines/.claude /path/to/your-project/
+rm -rf /tmp/ai-guidelines
 ```
 
 ## Structure
