@@ -6,6 +6,88 @@ Testing is **mandatory** for all service classes and business logic.
 
 ---
 
+## Test-Driven Development (TDD)
+
+**Write tests first, then implement the function.**
+
+### The TDD Cycle
+
+```
+1. RED    → Write a failing test for the desired behavior
+2. GREEN  → Write the minimum code to make the test pass
+3. REFACTOR → Clean up the code while keeping tests green
+```
+
+### Workflow
+
+1. **Define the interface** — Decide on method signature, parameters, and return type
+2. **Write the test** — Test the expected behavior (test will fail initially)
+3. **Run the test** — Confirm it fails for the right reason
+4. **Implement the function** — Write just enough code to pass
+5. **Run the test** — Confirm it passes
+6. **Refactor** — Improve code quality without changing behavior
+7. **Repeat** — Add more test cases for edge cases and error conditions
+
+### Example: TDD for a Discount Calculator
+
+**Step 1: Write the test first**
+
+```php
+public function test_apply_discount_with_20_percent_returns_correct_price(): void {
+    $calculator = new Price_Calculator();
+
+    $result = $calculator->apply_discount( 100.00, 20.0 );
+
+    $this->assertSame( 80.00, $result );
+}
+```
+
+**Step 2: Run test — it fails** (class doesn't exist yet)
+
+**Step 3: Implement the minimum code**
+
+```php
+class Price_Calculator {
+    public function apply_discount( float $price, float $percent ): float {
+        return $price - ( $price * $percent / 100 );
+    }
+}
+```
+
+**Step 4: Run test — it passes**
+
+**Step 5: Add edge case tests**
+
+```php
+public function test_apply_discount_rejects_negative_price(): void {
+    $this->expectException( \InvalidArgumentException::class );
+
+    $calculator = new Price_Calculator();
+    $calculator->apply_discount( -100.00, 10.0 );
+}
+```
+
+**Step 6: Implement validation**
+
+```php
+public function apply_discount( float $price, float $percent ): float {
+    if ( $price < 0 ) {
+        throw new \InvalidArgumentException( 'Price cannot be negative.' );
+    }
+
+    return $price - ( $price * $percent / 100 );
+}
+```
+
+### Benefits of TDD
+
+- **Clear requirements** — Tests define expected behavior before coding
+- **Better design** — Forces you to think about interfaces first
+- **Confidence** — Know immediately when something breaks
+- **Documentation** — Tests serve as living documentation
+
+---
+
 ## Directory Structure
 
 ```
