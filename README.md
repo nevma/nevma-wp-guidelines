@@ -154,3 +154,7 @@ git commit -m "Update nevma-wp-guidelines"
 - Performance audits
 
 **Contact:** [nevma.gr](https://nevma.gr)
+
+## Contributors
+
+- [Ioannis Kastorinis](https://github.com/mocassinis)
