@@ -153,7 +153,7 @@ git commit -m "Update nevma-wp-guidelines"
 - Enterprise WordPress solutions
 - Performance audits
 
-**Contact:** [nevma.gr](https://nevma.gr)
+**Contact:** [nevma.gr](https://www.nevma.gr/contact/)
 
 ## Contributors
 
