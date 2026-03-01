@@ -17,7 +17,8 @@ Quick reference for which guideline to load based on your task.
 | **Background/async tasks** | `06-performance.md` (Action Scheduler) |
 | **Frontend JavaScript** | `07-javascript.md` (vanilla JS section) |
 | **Admin JavaScript** | `07-javascript.md` (jQuery section) |
-| **Writing tests** | `09-testing.md` |
+| **Writing unit tests** | `09-testing.md` |
+| **E2E tests (Playwright)** | `14-e2e-testing.md` |
 | **Setting up PHPStan** | `10-static-analysis.md` |
 | **Automation & Scoping** | `13-automation-tooling.md` |
 | **Pre-commit review** | `11-checklist.md` |
@@ -40,6 +41,7 @@ Quick reference for which guideline to load based on your task.
 | `11-checklist.md` | ~60 | Pre-generation verification |
 | `12-advanced-patterns.md` | ~200 | DTOs, Value Objects, RBAC, Middleware |
 | `13-automation-tooling.md` | ~100 | Composer scoping (PHP-Scoper), phpcbf, Prettier |
+| `14-e2e-testing.md` | ~450 | Playwright E2E testing for WooCommerce |
 
 ## Common Combinations
 

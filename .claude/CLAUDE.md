@@ -18,6 +18,7 @@ Before starting any task, read the relevant guideline from `.claude/guidelines/`
 | Writing unit tests | `09-testing.md` |
 | PHPStan configuration | `10-static-analysis.md` |
 | Advanced patterns (DTOs, CLI) | `12-advanced-patterns.md` |
+| E2E testing (Playwright) | `14-e2e-testing.md` |
 | Before commit/PR | `11-checklist.md` |
 
 ## Core Rules (Always Apply)

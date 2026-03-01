@@ -82,7 +82,8 @@ rm -rf /tmp/nevma-wp-guidelines
     ├── 10-static-analysis.md      # PHPStan configuration
     ├── 11-checklist.md            # Pre-commit verification
     ├── 12-advanced-patterns.md    # DTOs, RBAC, CLI, middleware
-    └── 13-automation-tooling.md   # PHP-Scoper, auto-fixers
+    ├── 13-automation-tooling.md   # PHP-Scoper, auto-fixers
+    └── 14-e2e-testing.md          # Playwright E2E for WooCommerce
 ```
 
 ## Usage
@@ -108,6 +109,7 @@ Claude will read `00-new-plugin-workflow.md` and follow the 13-step process.
 | JavaScript | `07-javascript.md` |
 | Writing tests | `09-testing.md` |
 | Advanced patterns | `12-advanced-patterns.md` |
+| E2E testing | `14-e2e-testing.md` |
 | Before commit | `11-checklist.md` |
 
 ## Specialized Agents
