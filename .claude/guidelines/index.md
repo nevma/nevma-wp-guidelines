@@ -17,6 +17,8 @@ Quick reference for which guideline to load based on your task.
 | **Background/async tasks** | `06-performance.md` (Action Scheduler) |
 | **Frontend JavaScript** | `07-javascript.md` (vanilla JS section) |
 | **Admin JavaScript** | `07-javascript.md` (jQuery section) |
+| **Block interactivity** | `15-interactivity-api.md` |
+| **Local testing/demos** | `16-playground.md` |
 | **Writing unit tests** | `09-testing.md` |
 | **E2E tests (Playwright)** | `14-e2e-testing.md` |
 | **Setting up PHPStan** | `10-static-analysis.md` |
@@ -42,6 +44,8 @@ Quick reference for which guideline to load based on your task.
 | `12-advanced-patterns.md` | ~200 | DTOs, Value Objects, RBAC, Middleware |
 | `13-automation-tooling.md` | ~100 | Composer scoping (PHP-Scoper), phpcbf, Prettier |
 | `14-e2e-testing.md` | ~450 | Playwright E2E testing for WooCommerce |
+| `15-interactivity-api.md` | ~280 | WordPress Interactivity API, directives, stores |
+| `16-playground.md` | ~250 | WordPress Playground CLI, blueprints, testing |
 
 ## Common Combinations
 

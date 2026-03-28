@@ -14,6 +14,8 @@ Before starting any task, read the relevant guideline from `.claude/guidelines/`
 | WooCommerce integration | `05-woocommerce.md` |
 | Caching, async tasks, queries | `06-performance.md` |
 | Frontend/Admin JavaScript | `07-javascript.md` |
+| Block interactivity (data-wp-*) | `15-interactivity-api.md` |
+| Local testing with Playground | `16-playground.md` |
 | PHPDoc standards | `08-documentation.md` |
 | Writing unit tests | `09-testing.md` |
 | PHPStan configuration | `10-static-analysis.md` |
