@@ -83,7 +83,9 @@ rm -rf /tmp/nevma-wp-guidelines
     ├── 11-checklist.md            # Pre-commit verification
     ├── 12-advanced-patterns.md    # DTOs, RBAC, CLI, middleware
     ├── 13-automation-tooling.md   # PHP-Scoper, auto-fixers
-    └── 14-e2e-testing.md          # Playwright E2E for WooCommerce
+    ├── 14-e2e-testing.md          # Playwright E2E for WooCommerce
+    ├── 15-interactivity-api.md    # WordPress Interactivity API
+    └── 16-playground.md           # WordPress Playground CLI
 ```
 
 ## Usage
@@ -110,6 +112,8 @@ Claude will read `00-new-plugin-workflow.md` and follow the 13-step process.
 | Writing tests | `09-testing.md` |
 | Advanced patterns | `12-advanced-patterns.md` |
 | E2E testing | `14-e2e-testing.md` |
+| Block interactivity | `15-interactivity-api.md` |
+| Local testing | `16-playground.md` |
 | Before commit | `11-checklist.md` |
 
 ## Specialized Agents
@@ -132,6 +136,8 @@ Three Claude agents automatically review code:
 - Testing (PHPUnit + Brain Monkey + TDD)
 - Static analysis (PHPStan level 6+)
 - Dependency scoping (PHP-Scoper)
+- WordPress Interactivity API (data-wp-* directives)
+- WordPress Playground for local testing
 
 ## Updating
 
