@@ -35,7 +35,7 @@ Quick reference for which guideline to load based on your task.
 | `03-modern-php.md` | ~180 | PHP 8.0/8.1/8.2 features, strict typing |
 | `04-security.md` | ~350 | Input/output, nonces, AJAX, REST, SQL |
 | `05-woocommerce.md` | ~570 | CRUD, HPOS, block checkout, payment gateways, shipping, emails, logging |
-| `06-performance.md` | ~410 | Caching, Action Scheduler, query optimization, WooCommerce performance |
+| `06-performance.md` | ~715 | Caching, Action Scheduler, query optimization, HTTP API, profiling |
 | `07-javascript.md` | ~180 | Vanilla JS, jQuery admin, data passing |
 | `08-documentation.md` | ~40 | PHPDoc standards |
 | `09-testing.md` | ~550 | PHPUnit setup, test patterns, Brain Monkey |
