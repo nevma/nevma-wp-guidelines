@@ -257,11 +257,22 @@ final class Plugin {
 			return;
 		}
 
-		load_plugin_textdomain(
-			self::SLUG,
-			false,
-			dirname( plugin_basename( NVM_INV_FILE ) ) . '/languages'
-		);
+		// Translations:
+		// WordPress.org-hosted plugins: DO NOT call load_plugin_textdomain().
+		//   WP auto-loads translations from translate.wordpress.org based on the
+		//   "Text Domain" header. Calling it manually triggers a
+		//   _load_textdomain_just_in_time() doing_it_wrong notice on WP 6.7+.
+		//
+		// Self-hosted / private plugins shipping their own /languages folder:
+		//   Call it here, AFTER the init hook fires (WP 6.7+). Uncomment below:
+		//
+		// add_action( 'init', function (): void {
+		//     load_plugin_textdomain(
+		//         self::SLUG,
+		//         false,
+		//         dirname( plugin_basename( NVM_INV_FILE ) ) . '/languages'
+		//     );
+		// } );
 
 		$this->init_services();
 		$this->init_components();
