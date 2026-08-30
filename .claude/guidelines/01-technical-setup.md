@@ -43,6 +43,7 @@ Register new plugins here to avoid collisions:
 | `nvm-stock-sync` | `SSYNC` | `NVM\Stock_Sync` | `NVM_SSYNC_` |
 | `nvm-product-feeds` | `PF` | `NVM\Product_Feeds` | `NVM_PF_` |
 | `nvm-order-export` | `OE` | `NVM\Order_Export` | `NVM_OE_` |
+| `nvm-vendors` | `VND` | `NVM\Vendors` | `NVM_VND_` |
 
 > **Rule**: Before creating a new plugin, add its slug to this table to avoid collisions.
 
