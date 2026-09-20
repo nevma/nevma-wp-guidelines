@@ -56,7 +56,7 @@ When adding a new guideline, pick the next unused number in the right range. Do 
 Three files must stay in sync. Update all of them in the same commit:
 
 1. **`.claude/guidelines/NN-your-file.md`** — the new guideline itself.
-2. **`.claude/guidelines/index.md`** — add a row to the "By Task Type" table **and** the "By File Count" table (include approximate line count).
+2. **`.claude/guidelines/index.md`** — add a row to the "By Task Type" table **and** the "By File Count" table. The count column is exact, not approximate: `wc -l .claude/guidelines/[0-9]*.md`.
 3. **`.claude/CLAUDE.md`** — add a row to the Quick Start table if the task is common enough to route directly from the entry point.
 
 Also update `README.md`'s Structure/Task Reference sections if the file is prominent enough to appear there.
@@ -87,4 +87,4 @@ Do not rename these in guidelines without confirming the agent definitions match
 
 - Guidelines are read by Claude, not humans browsing docs. Prefer terse bullet lists and copy-pasteable code blocks over prose.
 - Every code example must itself follow the Core Rules above — examples are the primary teaching signal.
-- Keep file line counts close to what `index.md` advertises. If a file grows substantially, update its row in the "By File Count" table.
+- The "By File Count" table in `index.md` holds exact `wc -l` counts. Refresh the row of any guideline you edit, and the README's "Modular Loading" table if that file appears in it.

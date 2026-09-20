@@ -22,10 +22,11 @@ Instead of loading 2000+ lines every time, Claude loads only what's needed:
 
 | Task | Lines Loaded |
 |------|--------------|
-| Writing AJAX handler | ~390 (security only) |
-| WooCommerce integration | ~880 (WooCommerce only) |
-| Adding caching | ~410 (performance only) |
-| New plugin setup | ~320 (workflow only) |
+| Writing AJAX handler | 394 (security only) |
+| WooCommerce integration | 880 (WooCommerce only) |
+| Adding caching | 714 (performance only) |
+| New plugin setup | 321 (workflow only) |
+| Schema migration | 527 (lifecycle only) |
 
 ## Installation
 
