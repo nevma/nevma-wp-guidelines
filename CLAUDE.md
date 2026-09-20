@@ -24,6 +24,7 @@ There is no build, no tests, no lint — the deliverable is the markdown itself.
 ├── CLAUDE.md              This file
 └── .claude/
     ├── CLAUDE.md          Consumer entry point — the "always loaded" rules
+    ├── agents/            Auto-triggered review agents, installed with the submodule
     └── guidelines/
         ├── index.md       Task → file routing table
         └── NN-*.md        Modular guides loaded on demand
@@ -73,13 +74,13 @@ If you touch these, update every guideline that mentions them, not just one.
 
 ## Specialized Agents
 
-The guidelines reference three auto-triggered agents by name. These agents live in the user's global Claude config, not in this repo, but the names are part of the public contract:
+The guidelines reference three auto-triggered agents by name. They live in `.claude/agents/`, so consumers get them with the submodule. The names are part of the public contract:
 
 - `wordpress-security-auditor` — triggered by AJAX/REST/forms/SQL
 - `wordpress-performance-optimizer` — triggered by DB queries, loops, reports
 - `wp-unit-test-writer` — triggered by new service classes, handlers, enums
 
-Do not rename these in guidelines without confirming the agent definitions match.
+Do not rename these in guidelines without confirming the agent definitions match. A same-named agent in a user's global `~/.claude/agents/` takes precedence over the shipped one, which is the usual cause of an agent behaving differently than this repo describes.
 
 ## Editing Style
 

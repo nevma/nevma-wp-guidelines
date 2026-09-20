@@ -84,6 +84,11 @@ Full gate order, CI pipeline, and release gates: `17-quality-gates.md`.
 
 Three specialized agents review code automatically. Use them proactively after writing significant code.
 
+They ship with these guidelines in `.claude/agents/`, so any project that
+installs the submodule gets them — no separate setup. A same-named agent in
+your personal `~/.claude/agents/` would take precedence over these, so remove
+the personal copy if you want the shared definition to apply.
+
 ### 1. Security Auditor (`wordpress-security-auditor`)
 
 **Trigger after writing:**

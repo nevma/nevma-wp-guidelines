@@ -68,6 +68,10 @@ rm -rf /tmp/nevma-wp-guidelines
 ```
 .claude/
 ├── CLAUDE.md                      # Entry point (Claude reads this first)
+├── agents/                        # Auto-triggered review agents
+│   ├── wordpress-security-auditor.md
+│   ├── wordpress-performance-optimizer.md
+│   └── wp-unit-test-writer.md
 └── guidelines/
     ├── index.md                   # Task → file mapping
     ├── 00-new-plugin-workflow.md  # Step-by-step new plugin guide
@@ -140,7 +144,8 @@ Write Code → PHPCS → PHPStan → Unit Tests → Coverage Gate → E2E Tests 
 
 ## Specialized Agents
 
-Three Claude agents automatically review code:
+Three Claude agents automatically review code. They ship in `.claude/agents/`,
+so installing the submodule installs them too:
 
 | Agent | Triggers On | Reviews |
 |-------|-------------|---------|
