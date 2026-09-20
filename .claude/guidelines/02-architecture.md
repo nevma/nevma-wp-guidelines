@@ -228,6 +228,7 @@ final class Plugin {
 		add_action( 'plugins_loaded', [ $this, 'init' ] );
 
 		// Register activation/deactivation hooks.
+		// What belongs in each, plus uninstall.php: 18-lifecycle-migrations.md.
 		register_activation_hook( NVM_INV_FILE, [ $this, 'activate' ] );
 		register_deactivation_hook( NVM_INV_FILE, [ $this, 'deactivate' ] );
 	}

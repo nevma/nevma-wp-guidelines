@@ -22,6 +22,7 @@ Before starting any task, read the relevant guideline from `.claude/guidelines/`
 | Advanced patterns (DTOs, CLI) | `12-advanced-patterns.md` |
 | E2E testing (Playwright) | `14-e2e-testing.md` |
 | CI/CD, PHPCS, quality gates | `17-quality-gates.md` |
+| Activation, uninstall, DB migrations | `18-lifecycle-migrations.md` |
 | Before commit/PR | `11-checklist.md` |
 
 ## Core Rules (Always Apply)

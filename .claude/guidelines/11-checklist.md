@@ -132,6 +132,30 @@ npm run test:e2e
 
 ---
 
+## Lifecycle & Migrations
+
+Only when the plugin creates tables, options, scheduled tasks, or ships a schema
+change. Full rules: `18-lifecycle-migrations.md`.
+
+| Check | Verify |
+|-------|--------|
+| Migration runner | Hooked to `admin_init`, not the activation hook alone |
+| Schema version | Own option, separate from `Plugin::VERSION`, `$autoload` false |
+| Checkpointing | Version written after each migration, not once at the end |
+| Idempotency | Every migration safe to run twice |
+| Shipped migrations | Never edited or reordered after release |
+| `dbDelta` format | Two spaces after `PRIMARY KEY`, `KEY` not `INDEX`, lowercase types |
+| Column drop/rename | Explicit `ALTER`, guarded by an existence check |
+| Large backfills | Action Scheduler batches, never one request |
+| Activation defaults | `add_option()`, so reactivation preserves settings |
+| Rewrite flush | Deferred to `init` via a flag, never called in activation |
+| Multisite | Activation and uninstall loop `get_sites()` |
+| Deactivation | Unschedules and clears caches only; destroys no data |
+| `uninstall.php` | `WP_UNINSTALL_PLUGIN` guard, capability check, opt-in setting |
+| Uninstall sweep | `esc_like()` on prefixes, tables dropped, network options cleared |
+
+---
+
 ## Build
 
 | Check | Verify |

@@ -317,6 +317,11 @@ public function create_tables(): void {
 }
 ```
 
+Creating the table is only half the job. `dbDelta()`'s formatting rules, schema
+versioning, and the migration runner that reaches already-installed sites are in
+`18-lifecycle-migrations.md` — a table created here and never migrated will not
+pick up schema changes on update.
+
 ---
 
 ## File Upload Security

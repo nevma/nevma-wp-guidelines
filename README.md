@@ -91,7 +91,8 @@ rm -rf /tmp/nevma-wp-guidelines
     ├── 14-e2e-testing.md          # Playwright E2E for WooCommerce
     ├── 15-interactivity-api.md    # WordPress Interactivity API
     ├── 16-playground.md           # WordPress Playground CLI
-    └── 17-quality-gates.md        # PHPCS, CI/CD pipeline, Plugin Check, QIT
+    ├── 17-quality-gates.md        # PHPCS, CI/CD pipeline, Plugin Check, QIT
+    └── 18-lifecycle-migrations.md # Activation, uninstall, schema migrations
 ```
 
 ## Usage
@@ -121,6 +122,7 @@ Claude will read `00-new-plugin-workflow.md` and follow the 13-step process.
 | Block interactivity | `15-interactivity-api.md` |
 | Local testing | `16-playground.md` |
 | CI/CD & quality gates | `17-quality-gates.md` |
+| Activation, uninstall, migrations | `18-lifecycle-migrations.md` |
 | Before commit | `11-checklist.md` |
 
 ## Mandatory Testing

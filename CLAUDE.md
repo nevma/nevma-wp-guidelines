@@ -47,6 +47,7 @@ Guideline files use a **numeric prefix** that implies ordering and rough topic g
 | `12-13` | Advanced patterns, automation |
 | `14-16` | E2E testing, Interactivity API, Playground |
 | `17` | Quality gates, CI/CD |
+| `18` | Plugin lifecycle, schema migrations |
 
 When adding a new guideline, pick the next unused number in the right range. Do not renumber existing files — downstream CLAUDE.md and cross-references will break.
 

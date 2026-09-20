@@ -12,6 +12,7 @@ Quick reference for which guideline to load based on your task.
 | **Creating REST endpoint** | `04-security.md` (REST section) |
 | **Working with forms** | `04-security.md` (nonces, sanitization) |
 | **Custom database queries** | `04-security.md` (SQL section), `06-performance.md` |
+| **Activation / uninstall / migrations** | `18-lifecycle-migrations.md` |
 | **WooCommerce products/orders** | `05-woocommerce.md` |
 | **Adding caching** | `06-performance.md` |
 | **Background/async tasks** | `06-performance.md` (Action Scheduler) |
@@ -51,6 +52,7 @@ Quick reference for which guideline to load based on your task.
 | `15-interactivity-api.md` | ~280 | WordPress Interactivity API, directives, stores |
 | `16-playground.md` | ~250 | WordPress Playground CLI, blueprints, testing |
 | `17-quality-gates.md` | ~275 | PHPCS (WPCS 3.4) + PHPCompatibilityWP, CI pipeline, Plugin Check, QIT, release gate |
+| `18-lifecycle-migrations.md` | ~530 | Activation/deactivation, schema versioning, migration runner, dbDelta rules, uninstall.php |
 
 ## Common Combinations
 

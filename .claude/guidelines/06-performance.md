@@ -541,6 +541,7 @@ public function create_tables(): void {
 	) {$charset};";
 
 	require_once ABSPATH . 'wp-admin/includes/upgrade.php';
+	// Schema versioning and migrations: see 18-lifecycle-migrations.md.
 	dbDelta( $sql );
 }
 ```
