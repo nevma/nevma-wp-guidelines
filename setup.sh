@@ -3,14 +3,14 @@
 # Add AI guidelines as a git submodule to a project
 #
 # Usage:
-#   curl -fsSL https://raw.githubusercontent.com/mocassinis/ai-guidelines/main/setup.sh | bash
+#   curl -fsSL https://raw.githubusercontent.com/nevma/nevma-wp-guidelines/main/setup.sh | bash
 #
 # Or from local clone:
 #   ./setup.sh /path/to/your-project
 
 set -e
 
-REPO="git@github.com:mocassinis/ai-guidelines.git"
+REPO="git@github.com:nevma/nevma-wp-guidelines.git"
 SUBMODULE_DIR=".claude-guidelines"
 SYMLINK=".claude"
 

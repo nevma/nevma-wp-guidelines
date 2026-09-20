@@ -35,7 +35,7 @@ Keeps guidelines synced across projects.
 
 ```bash
 # First time: clone locally
-git clone git@github.com:mocassinis/nevma-wp-guidelines.git ~/.nevma-wp-guidelines
+git clone git@github.com:nevma/nevma-wp-guidelines.git ~/.nevma-wp-guidelines
 
 # Run on any project
 ~/.nevma-wp-guidelines/setup.sh /path/to/your-project
@@ -47,7 +47,7 @@ git commit -m "Add nevma-wp-guidelines submodule"
 
 ```bash
 cd /path/to/your-project
-git submodule add git@github.com:mocassinis/nevma-wp-guidelines.git .claude-guidelines
+git submodule add git@github.com:nevma/nevma-wp-guidelines.git .claude-guidelines
 ln -s .claude-guidelines/.claude .claude
 git add .claude
 git commit -m "Add nevma-wp-guidelines submodule"
@@ -58,7 +58,7 @@ git commit -m "Add nevma-wp-guidelines submodule"
 One-time copy, no sync.
 
 ```bash
-git clone git@github.com:mocassinis/nevma-wp-guidelines.git /tmp/nevma-wp-guidelines
+git clone git@github.com:nevma/nevma-wp-guidelines.git /tmp/nevma-wp-guidelines
 cp -r /tmp/nevma-wp-guidelines/.claude /path/to/your-project/
 rm -rf /tmp/nevma-wp-guidelines
 ```
