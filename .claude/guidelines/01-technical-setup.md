@@ -43,8 +43,20 @@ Register new plugins here to avoid collisions:
 | `nvm-stock-sync` | `SSYNC` | `NVM\Stock_Sync` | `NVM_SSYNC_` |
 | `nvm-product-feeds` | `PF` | `NVM\Product_Feeds` | `NVM_PF_` |
 | `nvm-order-export` | `OE` | `NVM\Order_Export` | `NVM_OE_` |
+| `nvm-vendors` | `VND` | `NVM\Vendors` | `NVM_VND_` |
+| `nvm-stickerfreak-orders` | `STICKERFREAK_ORDERS` | `NVM\Stickerfreak_Orders` | `NVM_STICKERFREAK_ORDERS_` |
+| `nvm-stickerfreak-preview` | `STICKERFREAK_PREVIEW` | `NVM\Stickerfreak_Preview` | `NVM_STICKERFREAK_PREVIEW_` |
+| `nvm-stickerfreak-adjustments` | `STICKERFREAK_ADJUSTMENTS` | `NVM\Stickerfreak_Adjustments` | `NVM_STICKERFREAK_ADJUSTMENTS_` |
+| `nvm-stickerfreak-login` | `STICKERFREAK_LOGIN` | `NVM\Stickerfreak_Login` | `NVM_STICKERFREAK_LOGIN_` |
+| `nvm-stickerfreak-reorder` | `STICKERFREAK_REORDER` | `NVM\Stickerfreak_Reorder` | `NVM_STICKERFREAK_REORDER_` |
 
 > **Rule**: Before creating a new plugin, add its slug to this table to avoid collisions.
+
+> **Note**: The `nvm-stickerfreak-*` family predates this registry and uses the
+> full folder name as its slug rather than a 3-5 character abbreviation. The
+> entries record what those plugins actually ship — renaming the global
+> constants of plugins already in production is not worth the churn. New
+> plugins outside that family should still use a short slug.
 
 ---
 

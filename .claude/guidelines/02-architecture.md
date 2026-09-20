@@ -428,7 +428,7 @@ final class Plugin {
 	"require-dev": {
 		"phpunit/phpunit": "^10.5",
 		"brain/monkey": "^2.6",
-		"yoast/phpunit-polyfills": "^3.0",
+		"yoast/phpunit-polyfills": "^2.0",
 		"mockery/mockery": "^1.6",
 		"phpstan/phpstan": "^2.1",
 		"szepeviktor/phpstan-wordpress": "^2.0",
@@ -461,6 +461,20 @@ final class Plugin {
 	}
 }
 ```
+
+> **PHPUnit / polyfills compatibility — do not pair these freely.**
+> `yoast/phpunit-polyfills` 3.x requires `phpunit ^6.4.4 || ^7.0 || ^8.0 || ^9.0 || ^11.0`
+> — it **skips PHPUnit 10 entirely**. Pairing `phpunit ^10.5` with `polyfills ^3.0`
+> is unsatisfiable and `composer update` fails outright. Working combinations:
+>
+> | PHPUnit | Polyfills | wp-phpunit integration tests |
+> |---------|-----------|------------------------------|
+> | `^9.6`  | `^2.0` or `^3.0` | Work out of the box |
+> | `^10.5` | `^2.0` **only** | Need the shim in `09-testing.md` |
+> | `^11.0` | `^3.0` | Need the shim in `09-testing.md` |
+>
+> The canonical set above (`^10.5` + `^2.0`) is what `nvm-vendors` ships. If a plugin
+> runs wp-phpunit integration tests and you would rather avoid the shim, use `^9.6`.
 
 ---
 

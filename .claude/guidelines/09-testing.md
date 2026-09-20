@@ -228,13 +228,13 @@ nvm-inventory/
 		</include>
 	</source>
 
-	<coverage>
-		<report>
-			<html outputDirectory="coverage"/>
-		</report>
-	</coverage>
 </phpunit>
 ```
+
+> **No `<coverage>` block on purpose.** Declaring a coverage report here makes a plain
+> `composer test` fail with *"No code coverage driver available"* on any machine without
+> xdebug or pcov — which is most development machines. Pass the flags on the command line
+> instead, as `test:coverage` below and the CI recipe in `17-quality-gates.md` already do.
 
 ---
 
@@ -905,6 +905,50 @@ composer require --dev wp-phpunit/wp-phpunit yoast/phpunit-polyfills
 ```
 
 Integration tests need MySQL — run them inside wp-env's tests environment (see below), never against a live site.
+
+> **PHPUnit 10/11 fatals against WordPress's test suite — read this before writing any integration test.**
+>
+> `WP_UnitTestCase_Base::set_up()` unconditionally calls `$this->expectDeprecated()`, whose parent
+> implementation calls `PHPUnit\Util\Test::parseTestMethodAnnotations()`. **PHPUnit 10 removed that
+> method**, so on PHPUnit 10 or 11 *every* integration test dies before its first assertion.
+> `wp-phpunit` 7.1.0 is the newest release and carries no PHPUnit 10+ branch — this is an unpatched
+> upstream gap, not a stale dependency you can upgrade past.
+>
+> Two ways out:
+>
+> **(a) Use `phpunit ^9.6`** for plugins that run integration tests. Nothing else is needed. Simplest.
+>
+> **(b) Stay on `^10.5`/`^11.0` and shim it** in your integration base class. Keep the parent's
+> hook-registration half and drop only the annotation scan:
+>
+> ```php
+> /**
+>  * Re-implementation of WP_UnitTestCase_Base::expectDeprecated() that skips its
+>  * PHPUnit-9-only annotation scan (PHPUnit 10 removed parseTestMethodAnnotations()).
+>  *
+>  * Keeps every hook registration, so an UNEXPECTED deprecation still fails the test.
+>  * Only the @expectedDeprecated / @expectedIncorrectUsage docblock form is lost — use
+>  * setExpectedDeprecated() / setExpectedIncorrectUsage() from inside a test body instead.
+>  */
+> public function expectDeprecated(): void {
+> 	add_action( 'deprecated_function_run', array( $this, 'deprecated_function_run' ), 10, 3 );
+> 	add_action( 'deprecated_argument_run', array( $this, 'deprecated_function_run' ), 10, 3 );
+> 	add_action( 'deprecated_class_run', array( $this, 'deprecated_function_run' ), 10, 3 );
+> 	add_action( 'deprecated_file_included', array( $this, 'deprecated_function_run' ), 10, 4 );
+> 	add_action( 'deprecated_hook_run', array( $this, 'deprecated_function_run' ), 10, 4 );
+> 	add_action( 'doing_it_wrong_run', array( $this, 'doing_it_wrong_run' ), 10, 3 );
+>
+> 	add_action( 'deprecated_function_trigger_error', '__return_false' );
+> 	add_action( 'deprecated_argument_trigger_error', '__return_false' );
+> 	add_action( 'deprecated_class_trigger_error', '__return_false' );
+> 	add_action( 'deprecated_file_trigger_error', '__return_false' );
+> 	add_action( 'deprecated_hook_trigger_error', '__return_false' );
+> 	add_action( 'doing_it_wrong_trigger_error', '__return_false' );
+> }
+> ```
+>
+> The safety property is preserved and was verified empirically in `nvm-vendors`: injecting a
+> `_deprecated_function()` call with no expectation registered still fails the test loudly.
 
 ### tests/bootstrap-integration.php
 

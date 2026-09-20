@@ -75,7 +75,7 @@ nvm-{plugin-name}/
 	"require-dev": {
 		"phpunit/phpunit": "^10.5",
 		"brain/monkey": "^2.6",
-		"yoast/phpunit-polyfills": "^3.0",
+		"yoast/phpunit-polyfills": "^2.0",
 		"mockery/mockery": "^1.6",
 		"phpstan/phpstan": "^2.1",
 		"szepeviktor/phpstan-wordpress": "^2.0",
